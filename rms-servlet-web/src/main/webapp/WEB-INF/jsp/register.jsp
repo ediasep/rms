@@ -35,14 +35,12 @@
                                 <input name="username" class="form-control" placeholder="Username" type="text">
                             </div> <!-- form-group// -->
                             <div class="form-group">
-                                <a class="float-right" href="#">Forgot?</a>
                                 <label>Your password</label>
                                 <input name="password" class="form-control" placeholder="******" type="password">
                             </div> <!-- form-group// -->
                             <div class="form-group">
-                                <a class="float-right" href="#">Forgot?</a>
-                                <label>Your password</label>
-                                <input name="password" class="form-control" placeholder="******" type="password">
+                                <label>Confirm password</label>
+                                <input name="confirm_password" class="form-control" placeholder="******" type="password">
                             </div> <!-- form-group// -->
                             <div class="form-group">
                             </div> <!-- form-group// -->

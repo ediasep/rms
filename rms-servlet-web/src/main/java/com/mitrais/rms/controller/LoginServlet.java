@@ -3,6 +3,7 @@ package com.mitrais.rms.controller;
 import com.mitrais.rms.dao.UserDao;
 import com.mitrais.rms.dao.impl.UserDaoImpl;
 import com.mitrais.rms.model.User;
+import org.mindrot.jbcrypt.BCrypt;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -36,8 +37,10 @@ public class LoginServlet extends AbstractController
             Optional<User> user = userdao.findByUserName(req.getParameter("username"));
 
             String name = req.getParameter("name");
+            String hash = user.get().getPassword();
+            String pass = req.getParameter("password");
 
-            if(user.isPresent() && user.get().getPassword().equals(req.getParameter("password"))){
+            if(user.isPresent() && BCrypt.checkpw(pass, hash)){
                 HttpSession session = req.getSession();
                 session.setAttribute("name", name);
                 resp.sendRedirect("/rms-servlet-web/users/list");

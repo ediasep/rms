@@ -21,7 +21,7 @@ public class DataSourceFactory
         dataSource.setDatabaseName("rmsdb");
         dataSource.setServerName("127.0.0.1");
         dataSource.setPort(3306);
-        dataSource.setUser("root");
+        dataSource.setUser("ed");
         dataSource.setPassword("");
         this.dataSource = dataSource;
     }
